@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>471646708646-45pabhb3vgtuh65r98hhfhce9k1d5gah.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.471646708646-45pabhb3vgtuh65r98hhfhce9k1d5gah</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>471646708646-fpfvhoqjjbh6ln46sfv5sv33156dib89.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCkmomMUqsoAFNkOlnSA47p1_RMmw60sCY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>471646708646</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>progamacao.dispostivos.moveis.quizapp</string>
+	<key>PROJECT_ID</key>
+	<string>quiz-6a7f3</string>
+	<key>STORAGE_BUCKET</key>
+	<string>quiz-6a7f3.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:471646708646:ios:812400cbbbd5269014e567</string>
+</dict>
+</plist>
