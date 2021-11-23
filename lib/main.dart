@@ -1,32 +1,36 @@
 import 'package:flutter/material.dart';
 
-import 'views/views.dart';
+// Import the firebase_core plugin
+import 'package:firebase_core/firebase_core.dart';
 
-void main() async {
-  runApp(MyApp());
+void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(App());
 }
 
-class MyApp extends StatelessWidget {
+class App extends StatefulWidget {
+  @override
+  _AppState createState() => _AppState();
+}
+
+class _AppState extends State<App> {
+  final Future<FirebaseApp> _initialization =   .initializeApp();
+
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      routes: {
-        '/': (context) => LoginScreen(),
-        '/about': (context) => AboutScreen(),
-        '/profile': (context) => ProfileScreen(),
-        '/topics': (context) => TopicsScreen(),
+    return FutureBuilder(
+      future: _initialization,
+      builder: (context, snapshot) {
+        if (snapshot.hasError) {
+          return Text('error');
+        }
+
+        if (snapshot.connectionState == ConnectionState.done) {
+          return MaterialApp();
+        }
+
+        return Text('loading');
       },
-      theme: ThemeData(
-          brightness: Brightness.dark,
-          bottomAppBarTheme: BottomAppBarTheme(color: Colors.greenAccent),
-          fontFamily: 'RobotoMono',
-          textTheme: TextTheme(
-            bodyText1: TextStyle(fontSize: 18),
-            bodyText2: TextStyle(fontSize: 16),
-            button: TextStyle(letterSpacing: 15, fontWeight: FontWeight.bold),
-            headline1: TextStyle(fontWeight: FontWeight.bold),
-            subtitle1: TextStyle(color: Colors.grey),
-          )),
     );
   }
 }

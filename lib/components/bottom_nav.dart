@@ -29,7 +29,7 @@ class AppBottomNav extends StatelessWidget {
       onTap: (int idx) {
         switch (idx) {
           case 0:
-            // do nothing
+            // do nothingNNNNNN
             break;
           case 1:
             Navigator.pushNamed(context, '/about');
