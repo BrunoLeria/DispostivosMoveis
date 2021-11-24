@@ -9,7 +9,8 @@ class HomeScreen extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: () => Navigator.pushNamed(context, '/about'),
-          child: Text('Go to second screen'),
+          child: Text('Go to second screen',
+              style: Theme.of(context).textTheme.button),
         ),
       ),
     );
