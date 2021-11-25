@@ -44,4 +44,27 @@ class FirestoreService {
       }
     });
   }
+
+  /// Updates the current user's report document after completing quiz
+  Future<void> updateUserReport(Quiz quiz) {
+    var user = AuthService().user!; //user is a FirebaseUser object.
+    var ref = _db
+        .collection('reports')
+        .doc(user.uid); //reference to the user's report document.
+
+    var data = {
+      //data() returns a Map. The Map contains the data to be updated.
+      'total': FieldValue.increment(1), // Total number of quizzes completed
+      'topics': {
+        quiz.topic: FieldValue.arrayUnion(
+            [quiz.id]) // List of quizzes completed in each topic
+      }
+    };
+
+    return ref.set(
+        data,
+        SetOptions(
+            merge:
+                true)); //SetOptions(merge: true) allows to merge the data with the existing data. It means that if the data already exists, it will be updated. Otherwise, it will be created.
+  }
 }
