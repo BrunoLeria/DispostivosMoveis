@@ -3,8 +3,8 @@ import 'package:demo/services/models.dart';
 import 'package:provider/provider.dart';
 
 class AnimatedProgressbar extends StatelessWidget {
-  final double value;
-  final double height;
+  final double value; // 0.0 - 100.0
+  final double height; // height of the progress bar
 
   const AnimatedProgressbar({Key? key, required this.value, this.height = 12})
       : super(key: key);
@@ -12,6 +12,7 @@ class AnimatedProgressbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(
+      // LayoutBuilder is used to get the width of the parent
       builder: (BuildContext context, BoxConstraints box) {
         return Container(
           padding: const EdgeInsets.all(10),
@@ -28,10 +29,11 @@ class AnimatedProgressbar extends StatelessWidget {
                 ),
               ),
               AnimatedContainer(
+                // When it's properties change, will animate it.
                 duration: const Duration(milliseconds: 800),
                 curve: Curves.easeOutCubic,
                 height: height,
-                width: box.maxWidth * _floor(value),
+                width: box.maxWidth * _floor(value), // * value
                 decoration: BoxDecoration(
                   color: _colorGen(value),
                   borderRadius: BorderRadius.all(
@@ -52,12 +54,14 @@ class AnimatedProgressbar extends StatelessWidget {
   }
 
   _colorGen(double value) {
+    // Makes the progress bar color change from red to green.
     int rbg = (value * 255).toInt();
     return Colors.deepOrange.withGreen(rbg).withRed(255 - rbg);
   }
 }
 
 class TopicProgress extends StatelessWidget {
+  // Show the progress of the topic
   const TopicProgress({Key? key, required this.topic}) : super(key: key);
 
   final Topic topic;
