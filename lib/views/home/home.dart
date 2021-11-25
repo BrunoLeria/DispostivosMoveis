@@ -13,9 +13,9 @@ class HomeScreen extends StatelessWidget {
       stream: AuthService().userStream,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.waiting) {
-          return const Text('Loading...');
+          return const Text('Carregando...');
         } else if (snapshot.hasError) {
-          return const Center(child: Text('Error!'));
+          return const Center(child: Text('Erro!'));
         } else if (snapshot.hasData) {
           return const TopicsScreen();
         } else {

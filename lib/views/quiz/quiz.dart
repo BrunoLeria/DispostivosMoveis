@@ -80,7 +80,7 @@ class StartPage extends StatelessWidget {
             children: <Widget>[
               ElevatedButton.icon(
                 onPressed: state.nextPage,
-                label: const Text('Start Quiz!'),
+                label: const Text('Começe o Quiz!'),
                 icon: const Icon(Icons.poll),
               )
             ],
@@ -114,7 +114,7 @@ class CongratsPage extends StatelessWidget {
               backgroundColor: Colors.green,
             ),
             icon: const Icon(FontAwesomeIcons.check),
-            label: const Text(' Mark Complete!'),
+            label: const Text('Marcar como feito!'),
             onPressed: () {
               FirestoreService().updateUserReport(quiz);
               Navigator.pushNamedAndRemoveUntil(
@@ -206,7 +206,7 @@ class QuestionPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Text(correct ? 'Good Job!' : 'Wrong'),
+              Text(correct ? 'Parabéns!' : 'Que pena, você errou'),
               Text(
                 opt.detail,
                 style: const TextStyle(fontSize: 18, color: Colors.white54),
@@ -215,7 +215,7 @@ class QuestionPage extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                     primary: correct ? Colors.green : Colors.red),
                 child: Text(
-                  correct ? 'Onward!' : 'Try Again',
+                  correct ? 'Boa rapaz!' : 'Tenta de novo',
                   style: const TextStyle(
                     color: Colors.white,
                     letterSpacing: 1.5,

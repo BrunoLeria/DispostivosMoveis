@@ -15,7 +15,7 @@ class ProfileScreen extends StatelessWidget {
       return Scaffold(
         appBar: AppBar(
           backgroundColor: Colors.deepOrange,
-          title: Text(user.displayName ?? 'Guest'),
+          title: Text(user.displayName ?? 'Convidado'),
         ),
         body: Center(
           child: Column(
@@ -39,7 +39,7 @@ class ProfileScreen extends StatelessWidget {
               const Spacer(),
               Text('${report.total}',
                   style: Theme.of(context).textTheme.headline2),
-              Text('Quizzes Completed',
+              Text('Quizzes Finalizados',
                   style: Theme.of(context).textTheme.subtitle2),
               const Spacer(),
               ElevatedButton(
