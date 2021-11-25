@@ -1,3 +1,4 @@
+import 'package:demo/views/topics/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:demo/services/services.dart';
@@ -27,6 +28,7 @@ class TopicsScreen extends StatelessWidget {
               backgroundColor: Colors.deepPurple,
               title: const Text('Topics'),
             ),
+            drawer: TopicDrawer(topics: topics),
             body: GridView.count(
               primary: false,
               padding: const EdgeInsets.all(20.0), //Padding between the cards.
