@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:demo/services/services.dart';
 import 'package:demo/components/components.dart';
 
-class ProfileScreen extends StatelessWidget {s
+class ProfileScreen extends StatelessWidget {
   ProfileScreen({Key? key}) : super(key: key);
 
   @override
