@@ -39,11 +39,15 @@ class QuizScreen extends StatelessWidget {
                     state.progress = (idx / (quiz.questions.length + 1)),
                 itemBuilder: (BuildContext context, int idx) {
                   if (idx == 0) {
-                    return StartPage(quiz: quiz);
+                    return StartPage(
+                        quiz: quiz); // In case the user wants to quit the quiz
                   } else if (idx == quiz.questions.length + 1) {
-                    return CongratsPage(quiz: quiz);
+                    return CongratsPage(
+                        quiz: quiz); // In case the user has finished the quiz
                   } else {
-                    return QuestionPage(question: quiz.questions[idx - 1]);
+                    return QuestionPage(
+                        question: quiz.questions[
+                            idx - 1]); // In case the user is on a question
                   }
                 },
               ),
