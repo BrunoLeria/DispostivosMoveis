@@ -7,18 +7,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:471646708646:android:2e186372024f89a914e567",
+        "mobilesdk_app_id": "1:471646708646:android:623648556e4575f714e567",
         "android_client_info": {
-          "package_name": "programacao.dispositvos.moveis.quizapp"
+          "package_name": "programacao.dispositvos.moveis.quizapp.demo"
         }
       },
       "oauth_client": [
         {
-          "client_id": "471646708646-fpfvhoqjjbh6ln46sfv5sv33156dib89.apps.googleusercontent.com",
+          "client_id": "471646708646-7l52ie5ta367l2fjjqv33kr2tf039tfb.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "programacao.dispositvos.moveis.quizapp",
-            "certificate_hash": "0cfcee88f140708ebdcfd067c28cff9963f7af85"
+            "package_name": "programacao.dispositvos.moveis.quizapp.demo",
+            "certificate_hash": "495b47ef90019562629c8bdbae89e1fbfa330df8"
           }
         },
         {
