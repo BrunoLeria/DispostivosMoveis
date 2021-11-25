@@ -2,12 +2,17 @@ import 'dart:convert';
 import 'dart:math';
 
 import 'package:crypto/crypto.dart';
+import 'package:demo/components/components.dart';
 import 'package:demo/routes.dart';
+import 'package:demo/services/firestore.dart';
+import 'package:demo/services/models.dart';
+import 'package:demo/themes.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 // Import the firebase_core plugin
 import 'package:firebase_core/firebase_core.dart';
+import 'package:provider/provider.dart';
 import 'package:sign_in_with_apple/sign_in_with_apple.dart';
 
 void main() async {
@@ -44,13 +49,19 @@ class _AppState extends State<App> {
 
         // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
-          return MaterialApp(
-            routes: appRoutes,
+          return StreamProvider(
+            create: (_) => FirestoreService().streamReport(),
+            catchError: (_, err) => Report(),
+            initialData: Report(),
+            child: MaterialApp(
+                debugShowCheckedModeBanner: true,
+                routes: appRoutes,
+                theme: appTheme),
           );
         }
 
         // Otherwise, show something whilst waiting for initialization to complete
-        return const Text('loading');
+        return const MaterialApp(home: LoadingScreen());
       },
     );
   }
