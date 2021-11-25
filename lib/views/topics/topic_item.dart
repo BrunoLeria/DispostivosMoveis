@@ -10,10 +10,13 @@ class TopicItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Hero(
+      //Animates the transition between the two pages when the user taps on a topic.
       tag: topic.img,
       child: Card(
-        clipBehavior: Clip.antiAlias,
+        //The card that contains the topic's image and title.
+        clipBehavior: Clip.antiAlias, //Anti-aliasing for the card.
         child: InkWell(
+          //The inkwell that is used to animate the tap animation.
           onTap: () {
             Navigator.of(context).push(
               MaterialPageRoute(
@@ -43,7 +46,8 @@ class TopicItem extends StatelessWidget {
                       height: 1.5,
                       fontWeight: FontWeight.bold,
                     ),
-                    overflow: TextOverflow.fade,
+                    overflow: TextOverflow
+                        .fade, //Fades the text if it is too long. Gracefully handles the case where the text is longer than the container.
                     softWrap: false,
                   ),
                 ),
